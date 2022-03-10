@@ -6,6 +6,12 @@ services:
     container_name: ms-sql-0
     volumes:
       - sql-temp1:/var/opt/mssql 
+  ms-sql-1:
+    image: a77x86/mssql-ml:latest
+    container_name: ms-sql-1
+    volumes:
+      - sql-temp2:/var/opt/mssql
+
     environment:
       MSSQL_PID: Developer
       ACCEPT_EULA: Y
@@ -15,6 +21,7 @@ services:
 
     ports:
       - 1435:1433 
+      
 volumes:
   sql-temp1:
 # networks: 
