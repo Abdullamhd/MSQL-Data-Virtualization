@@ -1,9 +1,9 @@
 version: '3.1'
 services:
-  ms-sql:
+  ms-sql-0:
     image: a77x86/mssql-ml:latest
     # image: custom-sql:lastest
-    container_name: sql-ml
+    container_name: ms-sql-0
     volumes:
       - sql-temp1:/var/opt/mssql 
     environment:
