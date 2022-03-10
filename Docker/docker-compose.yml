@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+  ms-sql:
+    image: a77x86/mssql-ml:latest
+    # image: custom-sql:lastest
+    container_name: sql-ml
+    volumes:
+      - sql-temp1:/var/opt/mssql 
+    environment:
+      MSSQL_PID: Developer
+      ACCEPT_EULA: Y
+      ACCEPT_EULA_ML: 'Y'
+      MSSQL_SA_PASSWORD: p3dc68f2Q@#
+      MSSQL_AGENT_ENABLED: 1
+
+    ports:
+      - 1435:1433 
+volumes:
+  sql-temp1:
+# networks: 
+#   default: 
+#     external: 
+#       name: db-network
